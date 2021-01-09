@@ -5,20 +5,42 @@
   margin: 0;
 }
 
-div {
+.clicker-container {
   height: 100vh;
   width: 100%;
-  background-color: red;
+  background-color: #bebec0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
+h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.amount-container {
+  width: 100px;
+  border: 5px solid #bebec0;
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070,
+    inset -2px -2px 3px #ffffff70, inset 2px 2px 6px #00000070;
+}
+
 button {
   cursor: pointer;
-  height: 100px;
-  width: 100px;
-  margin-top: 50px;
+  height: 20em;
+  width: 20em;
+  background-color: #bebec0;
+  border: 8px solid #bebec0;
   border-radius: 100%;
+  outline: none;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000070;
+}
+
+button:active {
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000070,
+    inset -3px -3px 5px #ffffff70, inset 3px 3px 15px #00000070;
 }

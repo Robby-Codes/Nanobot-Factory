@@ -8,7 +8,7 @@ const Clicker = () => {
     setAmount(Amount + 1);
   };
   return (
-    <div>
+    <div className="clicker-container">
       <Count amount={Amount} />
       <button onClick={() => handleClick()}>Click Test</button>
     </div>
@@ -16,7 +16,11 @@ const Clicker = () => {
 };
 
 const Count = (props) => {
-  return <h1>{props.amount}</h1>;
+  return (
+    <div className="amount-container">
+      <h1>{props.amount}</h1>
+    </div>
+  );
 };
 
 export default Clicker;
