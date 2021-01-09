@@ -1,5 +1,7 @@
+import Clicker from "./main/clicker section";
+
 function App() {
-  return <h1>Test</h1>;
+  return <Clicker />;
 }
 
 export default App;
