@@ -2,8 +2,7 @@
   height: 100vh;
   width: 100%;
   background-color: #bebec0;
-  border-top-width: 0;
-  border-bottom-width: 0;
+  padding: 0 10px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -11,7 +10,7 @@
 
 .stack {
   cursor: pointer;
-  height: 95%;
+  height: 80%;
   width: 23%;
   padding: 0 20px;
   border-top-width: 0;

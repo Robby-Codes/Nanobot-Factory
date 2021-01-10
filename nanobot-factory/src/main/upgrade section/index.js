@@ -24,7 +24,7 @@ const Upgrade = () => {
           itaque.
         </p>
       </div>
-      <div className="stack u1">
+      <div className="stack u2">
         <div className="u-icon-container">
           <img className="upgrade-icon" src={img} />
         </div>
@@ -37,7 +37,7 @@ const Upgrade = () => {
           itaque.
         </p>
       </div>
-      <div className="stack u1">
+      <div className="stack u3">
         <div className="u-icon-container">
           <img className="upgrade-icon" src={img} />
         </div>
@@ -50,7 +50,7 @@ const Upgrade = () => {
           itaque.
         </p>
       </div>
-      <div className="stack u1">
+      <div className="stack u4">
         <div className="u-icon-container">
           <img className="upgrade-icon" src={img} />
         </div>
