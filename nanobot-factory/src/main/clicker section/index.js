@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "./clicker.css";
+import img from "../../assets/click-icon-1.png";
 
 const Clicker = () => {
   const [Amount, setAmount] = useState(0);
@@ -10,7 +11,9 @@ const Clicker = () => {
   return (
     <div className="clicker-container">
       <Count amount={Amount} />
-      <button onClick={() => handleClick()}>Click Test</button>
+      <button onClick={() => handleClick()}>
+        <img className="click-icon" src={img} />
+      </button>
     </div>
   );
 };

@@ -1,0 +1,65 @@
+.upgrade-container {
+  height: 100vh;
+  width: 100%;
+  background-color: #bebec0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stack {
+  cursor: pointer;
+  height: 95%;
+  width: 23%;
+  padding: 0 20px;
+  border-top-width: 0;
+  border-bottom-width: 0;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070;
+}
+
+.u-icon-container {
+  height: 70px;
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  padding: 5px 0;
+  margin-bottom: 10px;
+  border: 3px solid #bebec0;
+  border-radius: 15px;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070,
+    inset -2px -2px 3px #ffffff70, inset 2px 2px 6px #00000070;
+}
+
+.upgrade-icon {
+  height: 50px;
+  width: 50px;
+}
+
+.dec-line {
+  height: 0px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #bebec0;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070,
+    inset -2px -2px 3px #ffffff70, inset 2px 2px 6px #00000070;
+}
+
+.stack h1 {
+  border-radius: 15px;
+  margin-bottom: 50px;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
+}
+
+.stack p {
+  text-align: center;
+  padding: 5px;
+  border-radius: 15px;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
+}
