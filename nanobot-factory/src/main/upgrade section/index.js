@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { data } from "../other/data";
+import { smoothScroll } from "../other/smoothscroll";
 import "./upgrade.css";
 import super_img from "../../assets/supernano.png";
 import click_img from "../../assets/click.png";
@@ -7,21 +9,12 @@ import factory_img from "../../assets/factory.png";
 import swarm_img from "../../assets/swarm.png";
 
 const Upgrade = () => {
-  const handleScroll = (e) => {
-    if (e.deltaY < 0) {
-      const page = document.getElementById("clicker");
-      page.scrollIntoView({ behavior: "smooth" });
-    } else if (e.deltaY > 0) {
-      const page = document.getElementById("status");
-      page.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
     <div
       className="upgrade-container"
       id="upgrades"
       onWheel={(e) => {
-        handleScroll(e);
+        smoothScroll("upgrades", e);
       }}
     >
       <div className="stack u1">

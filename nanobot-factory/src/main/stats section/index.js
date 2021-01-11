@@ -1,29 +1,31 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
+import { data } from "../other/data";
+import { smoothScroll } from "../other/smoothscroll";
 import "./stats.css";
 
 const Stats = () => {
-  const handleScroll = (e) => {
-    if (e.deltaY < 0) {
-      const page = document.getElementById("upgrades");
-      page.scrollIntoView({ behavior: "smooth" });
+  const [clicks, setClicks] = useState(data.total_clicks);
+  useEffect(() => {
+    if (clicks != data.total_clicks) {
+      setClicks = data.total_clicks;
     }
-  };
+  }, [data.total_clicks]);
   return (
     <>
       <div
         className="stats-section"
         id="status"
-        onWheel={(e) => handleScroll(e)}
+        onWheel={(e) => smoothScroll("status", e)}
       >
         <div className="stats-container">
           <div>
             <div>
               <p>Times Clicked</p>
-              <h1>10,000</h1>
+              <h1>{clicks}</h1>
             </div>
             <div>
-              <p>Current Nanobots Per Second</p>
+              <p>Nanobots Per Second</p>
               <h1>552,000</h1>
             </div>
             <div>
@@ -37,7 +39,7 @@ const Stats = () => {
               <h1>100,000,000,000</h1>
             </div>
             <div>
-              <p>Total Nanobots Used For Upgrades</p>
+              <p>Nanobots Used For Upgrades</p>
               <h1>1,000,000,000</h1>
             </div>
             <div>
