@@ -9,8 +9,7 @@
 }
 
 .stack {
-  cursor: pointer;
-  height: 80%;
+  height: 90%;
   width: 23%;
   padding: 0 20px;
   border-top-width: 0;
@@ -51,14 +50,54 @@
 }
 
 .stack h1 {
+  color: #851523;
+  text-align: center;
+  width: 100%;
+  padding: 0 10px;
   border-radius: 15px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
 }
 
 .stack p {
+  height: 100px;
   text-align: center;
   padding: 5px;
   border-radius: 15px;
   box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
+}
+
+.stack button {
+  cursor: pointer;
+  height: 120px;
+  width: 120px;
+  background-color: transparent;
+  border-radius: 100%;
+  margin-top: 30px;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: 0;
+  border-radius: 100%;
+}
+
+.stack button p {
+  font-weight: bold;
+  font-size: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80%;
+  width: 80%;
+  color: #851523;
+  background-color: transparent;
+  border-radius: 100%;
+  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
+}
+
+.stack button:active,
+.stack button p:active {
+  box-shadow: inset -2px -2px 3px #ffffff70, inset 2px 2px 6px #00000070;
 }

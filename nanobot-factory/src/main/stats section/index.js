@@ -3,9 +3,19 @@ import ReactDOM from "react-dom";
 import "./stats.css";
 
 const Stats = () => {
+  const handleScroll = (e) => {
+    if (e.deltaY < 0) {
+      const page = document.getElementById("upgrades");
+      page.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      <div className="stats-section">
+      <div
+        className="stats-section"
+        id="status"
+        onWheel={(e) => handleScroll(e)}
+      >
         <div className="stats-container">
           <div>
             <div>

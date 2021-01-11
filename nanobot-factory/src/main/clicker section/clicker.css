@@ -5,6 +5,12 @@
   margin: 0;
 }
 
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
 .clicker-container {
   height: 100vh;
   width: 100%;
@@ -15,7 +21,7 @@
   align-items: center;
 }
 
-h1 {
+.clicker-container h1 {
   color: #851523;
   text-align: center;
   width: 100%;
@@ -31,7 +37,7 @@ h1 {
     inset -2px -2px 3px #ffffff70, inset 2px 2px 6px #00000070;
 }
 
-button {
+.clicker-container button {
   cursor: pointer;
   height: 20em;
   width: 20em;
@@ -43,7 +49,7 @@ button {
   box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000070;
 }
 
-button:active {
+.clicker-container button:active {
   box-shadow: -3px -3px 5px #ffffff70, 3px 3px 15px #00000070,
     inset -3px -3px 5px #ffffff70, inset 3px 3px 15px #00000070;
 }

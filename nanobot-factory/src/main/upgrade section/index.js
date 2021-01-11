@@ -1,67 +1,84 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./upgrade.css";
-import img from "../../assets/click-icon-1.png";
+import super_img from "../../assets/supernano.png";
+import click_img from "../../assets/click.png";
+import factory_img from "../../assets/factory.png";
+import swarm_img from "../../assets/swarm.png";
 
 const Upgrade = () => {
+  const handleScroll = (e) => {
+    if (e.deltaY < 0) {
+      const page = document.getElementById("clicker");
+      page.scrollIntoView({ behavior: "smooth" });
+    } else if (e.deltaY > 0) {
+      const page = document.getElementById("status");
+      page.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <div className="upgrade-container">
-      <div
-        className="stack u1"
-        onClick={() => {
-          alert("Success!");
-        }}
-      >
+    <div
+      className="upgrade-container"
+      id="upgrades"
+      onWheel={(e) => {
+        handleScroll(e);
+      }}
+    >
+      <div className="stack u1">
         <div className="u-icon-container">
-          <img className="upgrade-icon" src={img} />
+          <img className="upgrade-icon" src={click_img} />
         </div>
         <div className="dec-line"></div>
-        <h1>Nano</h1>
+        <h1>Manual</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea
-          ducimus fuga quia delectus deleniti ipsum eaque ex molestiae dolorum
-          deserunt, nobis non recusandae adipisci possimus repudiandae aut nemo
-          itaque.
+          Sacrifice nanobots for research! Figure out how to manually build more
+          at a time.
         </p>
+        <button>
+          <p>2</p>
+        </button>
       </div>
       <div className="stack u2">
         <div className="u-icon-container">
-          <img className="upgrade-icon" src={img} />
+          <img className="upgrade-icon" src={super_img} />
         </div>
         <div className="dec-line"></div>
-        <h1>hello</h1>
+        <h1>Builder</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea
-          ducimus fuga quia delectus deleniti ipsum eaque ex molestiae dolorum
-          deserunt, nobis non recusandae adipisci possimus repudiandae aut nemo
-          itaque.
+          Combine nanobots to create a super nanobot capable of creating other
+          nanobots using materials around it!
         </p>
+        <button>
+          <p>2</p>
+        </button>
       </div>
       <div className="stack u3">
         <div className="u-icon-container">
-          <img className="upgrade-icon" src={img} />
+          <img className="upgrade-icon" src={factory_img} />
         </div>
         <div className="dec-line"></div>
-        <h1>hello</h1>
+        <h1>Foundry</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea
-          ducimus fuga quia delectus deleniti ipsum eaque ex molestiae dolorum
-          deserunt, nobis non recusandae adipisci possimus repudiandae aut nemo
-          itaque.
+          Morph nanobots together to create a microscopic nanobot factory!
+          Nanobots bring it materials to create many replicas.
         </p>
+        <button>
+          <p>2</p>
+        </button>
       </div>
       <div className="stack u4">
         <div className="u-icon-container">
-          <img className="upgrade-icon" src={img} />
+          <img className="upgrade-icon" src={swarm_img} />
         </div>
         <div className="dec-line"></div>
-        <h1>hello</h1>
+        <h1>Swarm</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam ea
-          ducimus fuga quia delectus deleniti ipsum eaque ex molestiae dolorum
-          deserunt, nobis non recusandae adipisci possimus repudiandae aut nemo
-          itaque.
+          Fuse nanobots together into a swarm of flying super nanobots capable
+          of finding materials and replicating!
         </p>
+        <button>
+          <p>2</p>
+        </button>
       </div>
     </div>
   );
