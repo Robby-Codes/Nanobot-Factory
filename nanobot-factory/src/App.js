@@ -1,15 +1,7 @@
-import Clicker from "./main/clicker section";
-import Upgrade from "./main/upgrade section";
-import Stats from "./main/stats section";
+import HomePage from "./main/home section";
 
 function App() {
-  return (
-    <>
-      <Clicker />
-      <Upgrade />
-      <Stats />
-    </>
-  );
+  return <HomePage />;
 }
 
 export default App;

@@ -4,13 +4,7 @@ import { data } from "../other/data";
 import { smoothScroll } from "../other/smoothscroll";
 import "./stats.css";
 
-const Stats = () => {
-  const [clicks, setClicks] = useState(data.total_clicks);
-  useEffect(() => {
-    if (clicks != data.total_clicks) {
-      setClicks = data.total_clicks;
-    }
-  }, [data.total_clicks]);
+const StatsSection = () => {
   return (
     <>
       <div
@@ -22,7 +16,7 @@ const Stats = () => {
           <div>
             <div>
               <p>Times Clicked</p>
-              <h1>{clicks}</h1>
+              <h1>55</h1>
             </div>
             <div>
               <p>Nanobots Per Second</p>
@@ -53,4 +47,4 @@ const Stats = () => {
   );
 };
 
-export default Stats;
+export default StatsSection;
