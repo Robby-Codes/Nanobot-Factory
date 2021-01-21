@@ -8,8 +8,9 @@ import img from "../../assets/click-icon-1.png";
 const Clicker = () => {
   const [Amount, setAmount] = useState(0);
   const handleClick = () => {
-    setAmount(Amount + 1);
     data.total_clicks += 1;
+    data.current_amount = Amount + data.manual_value;
+    setAmount(data.current_amount);
   };
   return (
     <div
