@@ -1,12 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
 import { smoothScroll } from "../other/smoothscroll";
 import "./clicker.css";
 import img from "../../assets/click-icon-1.png";
 import UpgradeSection from "../upgrade section";
-
-// We will use either prop drilling or use context //
 
 const HomePage = () => {
   return (
@@ -35,7 +33,7 @@ const Clicker = () => {
           <img className="click-icon" src={img} />
         </button>
       </div>
-      <UpgradeSection updateamount={() => setAmount(data.current_amount)} />
+      <UpgradeSection updateAmount={() => setAmount(data.current_amount)} />
     </>
   );
 };

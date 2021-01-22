@@ -9,11 +9,11 @@ import factory_img from "../../assets/factory.png";
 import swarm_img from "../../assets/swarm.png";
 import StatsSection from "../stats section";
 
-const UpgradeSection = ({ updateamount }) => {
-  return <Upgrade update={updateamount} />;
+const UpgradeSection = ({ updateAmount }) => {
+  return <Upgrade updateAmount={updateAmount} />;
 };
 
-const Upgrade = ({ update }) => {
+const Upgrade = ({ updateAmount }) => {
   const [mprice, setMPrice] = useState(data.manual_price);
   return (
     <>
@@ -31,7 +31,7 @@ const Upgrade = ({ update }) => {
           at a time."
           price={mprice}
           updatePrice={() => setMPrice(data.manual_price)}
-          update={update}
+          updateAmount={updateAmount}
         />
         <DifferentUpgrades
           img={super_img}
@@ -63,15 +63,15 @@ const DifferentUpgrades = ({
   description,
   price = 0,
   updatePrice,
-  update,
+  updateAmount,
 }) => {
   const handleClick = () => {
     if (data.current_amount >= price) {
       data.current_amount -= price;
       data.manual_value += 1;
-      data.manual_price *= 1.5;
+      data.manual_price *= 2;
       updatePrice();
-      update();
+      updateAmount();
       console.log(data);
     }
   };
