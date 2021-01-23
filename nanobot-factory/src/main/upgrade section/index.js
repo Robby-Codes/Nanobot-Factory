@@ -85,12 +85,18 @@ const DifferentUpgrades = ({
         data.manual_price *= 2;
       } else if (title === "Builder") {
         data.builder_value += 1;
-        data.builder_price *= 4;
-        AmountCounter(updateAmount);
+        data.builder_price *= 3;
+      } else if (title === "Foundry") {
+        data.foundry_value += 5;
+        data.foundry_price *= 5;
+      } else if (title === "Swarm") {
+        data.swarm_value += 10;
+        data.swarm_price *= 10;
       }
       data.current_amount -= price;
       updatePrice();
       updateAmount();
+      AmountCounter(updateAmount);
     }
   };
   return (
