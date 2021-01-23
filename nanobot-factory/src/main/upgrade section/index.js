@@ -15,6 +15,10 @@ const UpgradeSection = ({ updateAmount }) => {
 
 const Upgrade = ({ updateAmount }) => {
   const [mprice, setMPrice] = useState(data.manual_price);
+  const [bprice, setBPrice] = useState(data.builder_price);
+  const [fprice, setFPrice] = useState(data.foundry_price);
+  const [sprice, setSPrice] = useState(data.swarm_price);
+
   return (
     <>
       <div
@@ -38,18 +42,27 @@ const Upgrade = ({ updateAmount }) => {
           title="Builder"
           description="Combine nanobots to create a super nanobot capable of creating other
           nanobots using materials around it!"
+          price={bprice}
+          updatePrice={() => setBPrice(data.builder_price)}
+          updateAmount={updateAmount}
         />
         <DifferentUpgrades
           img={factory_img}
           title="Foundry"
           description="Morph nanobots together to create a microscopic nanobot factory!
           Nanobots bring it materials to create many replicas."
+          price={fprice}
+          updatePrice={() => setFPrice(data.foundry_price)}
+          updateAmount={updateAmount}
         />
         <DifferentUpgrades
           img={swarm_img}
           title="Swarm"
           description="Fuse nanobots together into a swarm of flying super nanobots capable
           of finding materials and replicating!"
+          price={sprice}
+          updatePrice={() => setSPrice(data.swarm_price)}
+          updateAmount={updateAmount}
         />
       </div>
       <StatsSection />
@@ -61,18 +74,23 @@ const DifferentUpgrades = ({
   img,
   title,
   description,
-  price = 0,
+  price,
   updatePrice,
   updateAmount,
 }) => {
   const handleClick = () => {
     if (data.current_amount >= price) {
+      if (title === "Manual") {
+        data.manual_value += 1;
+        data.manual_price *= 2;
+      } else if (title === "Builder") {
+        data.builder_value += 1;
+        data.builder_price *= 4;
+        AmountCounter(updateAmount);
+      }
       data.current_amount -= price;
-      data.manual_value += 1;
-      data.manual_price *= 2;
       updatePrice();
       updateAmount();
-      console.log(data);
     }
   };
   return (
@@ -88,6 +106,17 @@ const DifferentUpgrades = ({
       </button>
     </div>
   );
+};
+
+const AmountCounter = (updateAmount) => {
+  const builder = data.builder_value;
+  const factory = data.foundry_value;
+  const swarm = data.swarm_value;
+  const fraction = (builder + factory + swarm) / 10;
+  setInterval(() => {
+    data.current_amount += fraction;
+    updateAmount();
+  }, 100);
 };
 
 export default UpgradeSection;

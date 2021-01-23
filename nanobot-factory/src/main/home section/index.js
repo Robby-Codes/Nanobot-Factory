@@ -43,7 +43,7 @@ const Count = (props) => {
     <>
       <div className="amount-container">
         <h1>
-          {props.amount}
+          {Math.floor(props.amount)}
           <br /> Nanobots
         </h1>
       </div>
