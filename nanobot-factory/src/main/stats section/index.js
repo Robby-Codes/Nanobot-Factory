@@ -20,14 +20,11 @@ const StatsSection = () => {
             <OtherUpgradeStats />
           </div>
           <div>
-            <div className="upgrade-stat-2">
-              <h1># of Clicks: </h1>
-              <p>55</p>
-            </div>
-            <div className="upgrade-stat-3">
-              <h1>Total Nanobots per Second: </h1>
-              <p>55</p>
-            </div>
+            <TotalClicks />
+            <NanoPerSec />
+          </div>
+          <div>
+            <TimePlayed />
           </div>
         </div>
       </div>
@@ -37,28 +34,51 @@ const StatsSection = () => {
 
 const ManualUpgradeStats = () => {
   return (
-    <div>
-      <div className="upgrade-stat-1">
-        <h1>Manual</h1>
-        <p>Level: 55</p>
-        <p>
-          55<sub>/click</sub>
-        </p>
-      </div>
+    <div className="upgrade-stats">
+      <h1>Manual</h1>
+      <p>Lv: 55</p>
+      <p>
+        55<sub>/click</sub>
+      </p>
     </div>
   );
 };
 
 const OtherUpgradeStats = () => {
   return (
-    <div>
-      <div className="upgrade-stat-1">
-        <h1>title</h1>
-        <p>LV: 55</p>
-        <p>
-          55<sub>/sec</sub>
-        </p>
-      </div>
+    <div className="upgrade-stats">
+      <h1>title</h1>
+      <p>Lv: 55</p>
+      <p>
+        55<sub>/sec</sub>
+      </p>
+    </div>
+  );
+};
+
+const TotalClicks = () => {
+  return (
+    <div className="total-clicks-stat">
+      <h1>Clicks: </h1>
+      <p>5555</p>
+    </div>
+  );
+};
+
+const NanoPerSec = () => {
+  return (
+    <div className="nanopersec-stat">
+      <h1>Nanobots Per Second: </h1>
+      <p>5555</p>
+    </div>
+  );
+};
+
+const TimePlayed = () => {
+  return (
+    <div className="time-stat">
+      <h1>Total Time Played </h1>
+      <p>55</p>
     </div>
   );
 };

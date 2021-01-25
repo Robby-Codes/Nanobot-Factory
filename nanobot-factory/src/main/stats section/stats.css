@@ -18,74 +18,100 @@
 }
 
 .stats-container > div:nth-of-type(1) {
-  height: 50%;
+  height: 40%;
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
 
-.stats-container > div > div {
+.upgrade-stats {
   height: 100%;
-  width: 22%;
-}
-
-.upgrade-stat-1 {
-  height: 70%;
-  text-align: center;
+  width: 23%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  padding: 10px;
-  margin-bottom: 5px;
+  text-align: center;
+  padding: 20px;
   border-radius: 20px;
   border: 5px solid #bebec0;
   box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070;
 }
 
-.upgrade-stat-1 h1 {
-  font-size: 3em;
+.upgrade-stats h1 {
   color: #851523;
+  font-size: 3em;
 }
 
-.upgrade-stat-1 p {
+.upgrade-stats p {
   font-size: 1.5em;
 }
 
-.upgrade-stat-1 sub {
+.upgrade-stats sub {
   font-size: 0.5em;
 }
 
 .stats-container > div:nth-of-type(2) {
-  height: 10%;
+  height: 15%;
   width: 100%;
-  display: flex;
-  background-color: green;
-}
-
-.upgrade-stat-2,
-.upgrade-stat-3 {
-  height: 100%;
-  padding: 10px;
+  margin-top: 25px;
   display: flex;
   justify-content: space-around;
-  border-radius: 15px;
+}
+
+.total-clicks-stat,
+.nanopersec-stat {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 10px;
   border: 5px solid #bebec0;
   box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070,
     inset -3px -3px 5px #ffffff70, inset 3px 3px 10px #00000070;
 }
 
-.upgrade-stat-2 h1,
-.upgrade-stat-3 h1 {
-  font-size: 1.2em;
+.total-clicks-stat {
+  width: 23%;
+}
+
+.nanopersec-stat {
+  width: 73%;
+}
+
+.total-clicks-stat h1,
+.nanopersec-stat h1 {
+  font-size: 1.5em;
   color: #851523;
+  margin-right: 15px;
 }
 
-.upgrade-stat-2 p,
-.upgrade-stat-3 p {
+.total-clicks-stat p,
+.nanopersec-stat p {
   font-size: 1.2em;
 }
 
-.upgrade-stat-3 {
-  width: auto;
-  background-color: red;
+.stats-container > div:nth-of-type(3) {
+  text-align: center;
+  height: 35%;
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  border-radius: 20px;
+  border: 5px solid #bebec0;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070;
+}
+
+.time-stat h1 {
+  color: #851523;
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.time-stat p {
+  font-size: 2em;
 }
