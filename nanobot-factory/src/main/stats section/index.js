@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Clock from "react-live-clock";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
 import { smoothScroll } from "../other/smoothscroll";
@@ -14,14 +15,29 @@ const StatsSection = () => {
       >
         <div className="stats-container">
           <div>
-            <ManualUpgradeStats />
-            <OtherUpgradeStats />
-            <OtherUpgradeStats />
-            <OtherUpgradeStats />
+            <ManualUpgradeStats
+              level={data.manual_level}
+              mvalue={data.manual_value}
+            />
+            <OtherUpgradeStats
+              title="Builder"
+              level={data.builder_level}
+              ovalue={data.builder_value}
+            />
+            <OtherUpgradeStats
+              title="Foundry"
+              level={data.foundry_level}
+              ovalue={data.foundry_value}
+            />
+            <OtherUpgradeStats
+              title="Swarm"
+              level={data.swarm_level}
+              ovalue={data.swarm_value}
+            />
           </div>
           <div>
-            <TotalClicks />
-            <NanoPerSec />
+            <TotalClicks clicks={data.total_clicks} />
+            <NanoPerSec nanos={data.nanobots_per_second} />
           </div>
           <div>
             <TimePlayed />
@@ -32,53 +48,60 @@ const StatsSection = () => {
   );
 };
 
-const ManualUpgradeStats = () => {
+const ManualUpgradeStats = ({ level, mvalue }) => {
   return (
     <div className="upgrade-stats">
       <h1>Manual</h1>
-      <p>Lv: 55</p>
+      <p>Lv: {level}</p>
       <p>
-        55<sub>/click</sub>
+        {mvalue}
+        <sub>/click</sub>
       </p>
     </div>
   );
 };
 
-const OtherUpgradeStats = () => {
+const OtherUpgradeStats = ({ title, level, ovalue }) => {
   return (
     <div className="upgrade-stats">
-      <h1>title</h1>
-      <p>Lv: 55</p>
+      <h1>{title}</h1>
+      <p>Lv: {level}</p>
       <p>
-        55<sub>/sec</sub>
+        {ovalue}
+        <sub>/sec</sub>
       </p>
     </div>
   );
 };
 
-const TotalClicks = () => {
+const TotalClicks = ({ clicks }) => {
   return (
     <div className="total-clicks-stat">
       <h1>Clicks: </h1>
-      <p>5555</p>
+      <p>{clicks}</p>
     </div>
   );
 };
 
-const NanoPerSec = () => {
+const NanoPerSec = ({ nanos }) => {
   return (
     <div className="nanopersec-stat">
-      <h1>Nanobots Per Second: </h1>
-      <p>5555</p>
+      <h1>Automated Nanobots Per Second: </h1>
+      <p>{nanos}</p>
     </div>
   );
 };
 
 const TimePlayed = () => {
+  let seconds = 0;
+  let minutes = 0;
+  let hours = 0;
   return (
     <div className="time-stat">
       <h1>Total Time Played </h1>
-      <p>55</p>
+      <p>
+        {hours}:{minutes}:{seconds}
+      </p>
     </div>
   );
 };
