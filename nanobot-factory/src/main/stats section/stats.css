@@ -10,48 +10,82 @@
 .stats-container {
   height: 90%;
   width: 90%;
-  padding: 30px;
+  padding: 20px;
   border-radius: 20px;
   border: 5px solid #bebec0;
   box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070,
     inset -3px -3px 5px #ffffff70, inset 3px 3px 10px #00000070;
 }
 
-.stats-container > div {
+.stats-container > div:nth-of-type(1) {
   height: 50%;
   width: 100%;
-  margin-bottom: 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .stats-container > div > div {
-  padding: 10px;
-  border-radius: 15px;
+  height: 100%;
+  width: 22%;
+}
+
+.upgrade-stat-1 {
+  height: 70%;
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  box-shadow: -2px -2px 3px #ffffff70, 2px 2px 6px #00000070;
+  justify-content: space-around;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 20px;
+  border: 5px solid #bebec0;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070;
 }
 
-.stats-container div:nth-of-type(1) > div {
-  height: 95%;
-  width: 31%;
-}
-
-.stats-container div:nth-of-type(2) > div {
-  height: 95%;
-  width: 31%;
-}
-
-.stats-container p {
-  font-size: 1.2em;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.stats-container h1 {
-  text-align: center;
+.upgrade-stat-1 h1 {
+  font-size: 3em;
   color: #851523;
+}
+
+.upgrade-stat-1 p {
+  font-size: 1.5em;
+}
+
+.upgrade-stat-1 sub {
+  font-size: 0.5em;
+}
+
+.stats-container > div:nth-of-type(2) {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  background-color: green;
+}
+
+.upgrade-stat-2,
+.upgrade-stat-3 {
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  border-radius: 15px;
+  border: 5px solid #bebec0;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070,
+    inset -3px -3px 5px #ffffff70, inset 3px 3px 10px #00000070;
+}
+
+.upgrade-stat-2 h1,
+.upgrade-stat-3 h1 {
+  font-size: 1.2em;
+  color: #851523;
+}
+
+.upgrade-stat-2 p,
+.upgrade-stat-3 p {
+  font-size: 1.2em;
+}
+
+.upgrade-stat-3 {
+  width: auto;
+  background-color: red;
 }

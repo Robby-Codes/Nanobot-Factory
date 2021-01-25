@@ -14,36 +14,52 @@ const StatsSection = () => {
       >
         <div className="stats-container">
           <div>
-            <div>
-              <p>Times Clicked</p>
-              <h1>55</h1>
-            </div>
-            <div>
-              <p>Nanobots Per Second</p>
-              <h1>552,000</h1>
-            </div>
-            <div>
-              <p>Age</p>
-              <h1>2d:2h:2m</h1>
-            </div>
+            <ManualUpgradeStats />
+            <OtherUpgradeStats />
+            <OtherUpgradeStats />
+            <OtherUpgradeStats />
           </div>
           <div>
-            <div>
-              <p>Total Nanobot Made</p>
-              <h1>100,000,000,000</h1>
+            <div className="upgrade-stat-2">
+              <h1># of Clicks: </h1>
+              <p>55</p>
             </div>
-            <div>
-              <p>Nanobots Used For Upgrades</p>
-              <h1>1,000,000,000</h1>
-            </div>
-            <div>
-              <p>Current Nanobots</p>
-              <h1>1,000,000,000</h1>
+            <div className="upgrade-stat-3">
+              <h1>Total Nanobots per Second: </h1>
+              <p>55</p>
             </div>
           </div>
         </div>
       </div>
     </>
+  );
+};
+
+const ManualUpgradeStats = () => {
+  return (
+    <div>
+      <div className="upgrade-stat-1">
+        <h1>Manual</h1>
+        <p>Level: 55</p>
+        <p>
+          55<sub>/click</sub>
+        </p>
+      </div>
+    </div>
+  );
+};
+
+const OtherUpgradeStats = () => {
+  return (
+    <div>
+      <div className="upgrade-stat-1">
+        <h1>title</h1>
+        <p>LV: 55</p>
+        <p>
+          55<sub>/sec</sub>
+        </p>
+      </div>
+    </div>
   );
 };
 
