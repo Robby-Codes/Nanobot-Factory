@@ -4,7 +4,7 @@ import { data } from "../other/data";
 import { smoothScroll } from "../other/smoothscroll";
 import "./stats.css";
 
-const StatsSection = () => {
+const StatsSection = ({ time }) => {
   return (
     <>
       <div
@@ -39,7 +39,7 @@ const StatsSection = () => {
             <NanoPerSec nanos={data.nanobots_per_second} />
           </div>
           <div>
-            <TimePlayed />
+            <TimePlayed clock={time} />
           </div>
         </div>
       </div>
@@ -95,19 +95,11 @@ const NanoPerSec = ({ nanos }) => {
   );
 };
 
-const TimePlayed = () => {
-  const [time, setTime] = useState("00:00:00");
-  useEffect(() => {
-    setTime(
-      `${Math.floor(data.hours)}:${Math.floor(data.minutes)}:${Math.floor(
-        data.seconds
-      )}`
-    );
-  }, [data.seconds]);
+const TimePlayed = ({ clock }) => {
   return (
     <div className="time-stat">
       <h1>Total Time Played </h1>
-      <p>{time}</p>
+      <p>{Math.floor(clock)}</p>
     </div>
   );
 };
