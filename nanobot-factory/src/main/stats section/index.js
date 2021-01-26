@@ -96,15 +96,18 @@ const NanoPerSec = ({ nanos }) => {
 };
 
 const TimePlayed = () => {
-  let seconds = 0;
-  let minutes = 0;
-  let hours = 0;
+  const [time, setTime] = useState("00:00:00");
+  useEffect(() => {
+    setTime(
+      `${Math.floor(data.hours)}:${Math.floor(data.minutes)}:${Math.floor(
+        data.seconds
+      )}`
+    );
+  }, [data.seconds]);
   return (
     <div className="time-stat">
       <h1>Total Time Played </h1>
-      <p>
-        {hours}:{minutes}:{seconds}
-      </p>
+      <p>{time}</p>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
 import { smoothScroll } from "../other/smoothscroll";
@@ -10,6 +10,9 @@ import swarm_img from "../../assets/swarm.png";
 import StatsSection from "../stats section";
 
 const UpgradeSection = ({ updateAmount }) => {
+  useEffect(() => {
+    mainAmountAndTimeCounter(updateAmount);
+  }, []);
   return <Upgrade updateAmount={updateAmount} />;
 };
 
@@ -121,12 +124,23 @@ const handleClick = (title, price, updatePrice, updateAmount) => {
     }
     data.current_amount -= price;
     updatePrice();
-    updateAmount();
-    amountCounter(updateAmount);
+    mainAmountAndTimeCounter(updateAmount);
   }
 };
 
-const amountCounter = (updateAmount) => {
+const watchTime = () => {
+  data.seconds += 0.1;
+  if (data.seconds === 60) {
+    data.seconds = 0;
+    data.minutes += 1;
+  }
+  if (data.minutes === 60) {
+    data.minutes = 0;
+    data.hours += 1;
+  }
+};
+
+const mainAmountAndTimeCounter = (updateAmount) => {
   const builder = data.builder_value;
   const factory = data.foundry_value;
   const swarm = data.swarm_value;
@@ -134,6 +148,7 @@ const amountCounter = (updateAmount) => {
   setInterval(() => {
     data.current_amount += fraction;
     updateAmount();
+    watchTime();
   }, 100);
 };
 
