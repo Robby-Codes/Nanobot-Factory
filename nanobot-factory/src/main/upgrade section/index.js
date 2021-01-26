@@ -18,7 +18,6 @@ const Upgrade = ({ updateAmount }) => {
   const [bprice, setBPrice] = useState(data.builder_price);
   const [fprice, setFPrice] = useState(data.foundry_price);
   const [sprice, setSPrice] = useState(data.swarm_price);
-
   return (
     <>
       <div
@@ -78,37 +77,6 @@ const DifferentUpgrades = ({
   updatePrice,
   updateAmount,
 }) => {
-  const handleClick = () => {
-    if (data.current_amount >= price) {
-      if (title === "Manual") {
-        data.manual_value += 1;
-        data.manual_price *= 2;
-        data.manual_level += 1;
-      } else if (title === "Builder") {
-        data.builder_value += 1;
-        data.builder_price *= 3;
-        data.builder_level += 1;
-        data.nanobots_per_second =
-          data.builder_value + data.foundry_value + data.swarm_value;
-      } else if (title === "Foundry") {
-        data.foundry_value += 5;
-        data.foundry_price *= 5;
-        data.foundry_level += 1;
-        data.nanobots_per_second =
-          data.builder_value + data.foundry_value + data.swarm_value;
-      } else if (title === "Swarm") {
-        data.swarm_value += 10;
-        data.swarm_price *= 10;
-        data.swarm_level += 1;
-        data.nanobots_per_second =
-          data.builder_value + data.foundry_value + data.swarm_value;
-      }
-      data.current_amount -= price;
-      updatePrice();
-      updateAmount();
-      AmountCounter(updateAmount);
-    }
-  };
   return (
     <div className="stack">
       <div className="u-icon-container">
@@ -117,14 +85,48 @@ const DifferentUpgrades = ({
       <div className="dec-line"></div>
       <h1>{title}</h1>
       <p>{description}</p>
-      <button onClick={() => handleClick()}>
+      <button
+        onClick={() => handleClick(title, price, updatePrice, updateAmount)}
+      >
         <p>{price}</p>
       </button>
     </div>
   );
 };
 
-const AmountCounter = (updateAmount) => {
+const handleClick = (title, price, updatePrice, updateAmount) => {
+  if (data.current_amount >= price) {
+    if (title === "Manual") {
+      data.manual_value += 1;
+      data.manual_price *= 2;
+      data.manual_level += 1;
+    } else if (title === "Builder") {
+      data.builder_value += 1;
+      data.builder_price *= 3;
+      data.builder_level += 1;
+      data.nanobots_per_second =
+        data.builder_value + data.foundry_value + data.swarm_value;
+    } else if (title === "Foundry") {
+      data.foundry_value += 5;
+      data.foundry_price *= 5;
+      data.foundry_level += 1;
+      data.nanobots_per_second =
+        data.builder_value + data.foundry_value + data.swarm_value;
+    } else if (title === "Swarm") {
+      data.swarm_value += 10;
+      data.swarm_price *= 10;
+      data.swarm_level += 1;
+      data.nanobots_per_second =
+        data.builder_value + data.foundry_value + data.swarm_value;
+    }
+    data.current_amount -= price;
+    updatePrice();
+    updateAmount();
+    amountCounter(updateAmount);
+  }
+};
+
+const amountCounter = (updateAmount) => {
   const builder = data.builder_value;
   const factory = data.foundry_value;
   const swarm = data.swarm_value;

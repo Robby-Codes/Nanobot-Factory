@@ -10,6 +10,9 @@
 .stats-container {
   height: 90%;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   padding: 20px;
   border-radius: 20px;
   border: 5px solid #bebec0;
@@ -44,16 +47,21 @@
 
 .upgrade-stats p {
   font-size: 1.5em;
+  text-align: left;
 }
 
 .upgrade-stats sub {
   font-size: 0.5em;
 }
 
+span {
+  font-weight: bold;
+  color: #851523;
+}
+
 .stats-container > div:nth-of-type(2) {
   height: 15%;
   width: 100%;
-  margin-top: 25px;
   display: flex;
   justify-content: space-around;
 }
@@ -90,13 +98,13 @@
 .total-clicks-stat p,
 .nanopersec-stat p {
   font-size: 1.2em;
+  font-weight: bold;
 }
 
 .stats-container > div:nth-of-type(3) {
   text-align: center;
   height: 40%;
   width: 100%;
-  margin-top: 25px;
   display: flex;
   justify-content: center;
   align-items: center;

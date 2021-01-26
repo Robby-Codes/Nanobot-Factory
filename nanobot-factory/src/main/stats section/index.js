@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Clock from "react-live-clock";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
 import { smoothScroll } from "../other/smoothscroll";
@@ -52,9 +51,11 @@ const ManualUpgradeStats = ({ level, mvalue }) => {
   return (
     <div className="upgrade-stats">
       <h1>Manual</h1>
-      <p>Lv: {level}</p>
       <p>
-        {mvalue}
+        Level: <span>{level}</span>
+      </p>
+      <p>
+        Value: <span>{mvalue}</span>
         <sub>/click</sub>
       </p>
     </div>
@@ -65,9 +66,11 @@ const OtherUpgradeStats = ({ title, level, ovalue }) => {
   return (
     <div className="upgrade-stats">
       <h1>{title}</h1>
-      <p>Lv: {level}</p>
       <p>
-        {ovalue}
+        Level: <span>{level}</span>
+      </p>
+      <p>
+        Value: <span>{ovalue}</span>
         <sub>/sec</sub>
       </p>
     </div>
