@@ -10,7 +10,7 @@ import swarm_img from "../../assets/swarm.png";
 import StatsSection from "../stats section";
 
 const UpgradeSection = ({ updateAmount }) => {
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState("00:00:00");
   useEffect(() => {
     amountCounter(updateAmount, setTime);
   }, []);
@@ -142,6 +142,31 @@ const handleClick = (title, price, updatePrice, updateAmount, updateTime) => {
   }
 };
 
+const formatTime = () => {
+  data.seconds += 0.1;
+  if (data.seconds >= 60) {
+    data.seconds = 0;
+    data.minutes += 1;
+  }
+  if (data.minutes >= 60) {
+    data.minutes = 0;
+    data.hours += 1;
+  }
+  let formattedSeconds = Math.floor(data.seconds).toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: true,
+  });
+  let formattedMinutes = Math.floor(data.minutes).toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: true,
+  });
+  let formattedHours = Math.floor(data.hours).toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: true,
+  });
+  return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+};
+
 const amountCounter = (updateAmount, updateTime) => {
   const builder = data.builder_value;
   const factory = data.foundry_value;
@@ -150,16 +175,7 @@ const amountCounter = (updateAmount, updateTime) => {
   setInterval(() => {
     data.current_amount += fraction;
     updateAmount();
-    data.seconds += 0.1;
-    if (data.seconds >= 60) {
-      data.seconds = 0;
-      data.minutes += 1;
-    }
-    if (data.minutes >= 60) {
-      data.minutes = 0;
-      data.hours += 1;
-    }
-    updateTime(data.seconds);
+    updateTime(formatTime);
   }, 100);
 };
 

@@ -99,7 +99,7 @@ const TimePlayed = ({ clock }) => {
   return (
     <div className="time-stat">
       <h1>Total Time Played </h1>
-      <p>{Math.floor(clock)}</p>
+      <p>{clock}</p>
     </div>
   );
 };
