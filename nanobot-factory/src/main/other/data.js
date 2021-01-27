@@ -8,15 +8,15 @@ export const data = {
   manual_level: 0,
   //////////////////////////////////////////////////
   builder_value: 0,
-  builder_price: 10,
+  builder_price: 50,
   builder_level: 0,
   //////////////////////////////////////////////////
   foundry_value: 0,
-  foundry_price: 10,
+  foundry_price: 150,
   foundry_level: 0,
   //////////////////////////////////////////////////
   swarm_value: 0,
-  swarm_price: 10,
+  swarm_price: 300,
   swarm_level: 0,
   //////////////////////////////////////////////////
   nanobots_per_second: 0,
