@@ -37,7 +37,7 @@
   padding: 20px;
   border-radius: 20px;
   border: 5px solid #bebec0;
-  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070;
+  box-shadow: -3px -3px 3px #ffffff70, 3px 3px 8px #00000070;
 }
 
 .upgrade-stats h1 {
@@ -46,15 +46,16 @@
 }
 
 .upgrade-stats p {
-  font-size: 1.5em;
+  font-size: 1.2em;
   text-align: left;
 }
 
 .upgrade-stats sub {
-  font-size: 0.5em;
+  font-size: 0.6em;
 }
 
 span {
+  font-size: 1.5em;
   font-weight: bold;
   color: #851523;
 }
@@ -76,8 +77,8 @@ span {
   padding: 10px;
   border-radius: 10px;
   border: 5px solid #bebec0;
-  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070,
-    inset -3px -3px 5px #ffffff70, inset 3px 3px 10px #00000070;
+  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 8px #00000070,
+    inset -3px -3px 5px #ffffff70, inset 3px 3px 8px #00000070;
 }
 
 .total-clicks-stat {
@@ -116,10 +117,10 @@ span {
 
 .time-stat h1 {
   color: #851523;
-  font-size: 3.5em;
+  font-size: 4em;
   margin-bottom: 20px;
 }
 
 .time-stat p {
-  font-size: 2em;
+  font-size: 3em;
 }

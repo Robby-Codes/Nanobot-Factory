@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
+import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
 import "./upgrade.css";
 import super_img from "../../assets/supernano.png";
@@ -37,46 +38,48 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
           smoothScroll("upgrades", e);
         }}
       >
-        <DifferentUpgrades
-          img={click_img}
-          title="Manual"
-          description="Sacrifice nanobots for research! Figure out how to manually build more
+        <div className="upgrades">
+          <DifferentUpgrades
+            img={click_img}
+            title="Manual"
+            description="Sacrifice nanobots for research! Figure out how to manually build more
           at a time."
-          price={mprice}
-          updatePrice={() => setMPrice(data.manual_price)}
-          updateAmount={updateAmount}
-          updateTime={updateTime}
-        />
-        <DifferentUpgrades
-          img={super_img}
-          title="Builder"
-          description="Combine nanobots to create a super nanobot capable of creating other
+            price={mprice}
+            updatePrice={() => setMPrice(data.manual_price)}
+            updateAmount={updateAmount}
+            updateTime={updateTime}
+          />
+          <DifferentUpgrades
+            img={super_img}
+            title="Builder"
+            description="Combine nanobots to create a super nanobot capable of creating other
           nanobots using materials around it!"
-          price={bprice}
-          updatePrice={() => setBPrice(data.builder_price)}
-          updateAmount={updateAmount}
-          updateTime={updateTime}
-        />
-        <DifferentUpgrades
-          img={factory_img}
-          title="Foundry"
-          description="Morph nanobots together to create a microscopic nanobot factory!
+            price={bprice}
+            updatePrice={() => setBPrice(data.builder_price)}
+            updateAmount={updateAmount}
+            updateTime={updateTime}
+          />
+          <DifferentUpgrades
+            img={factory_img}
+            title="Foundry"
+            description="Morph nanobots together to create a microscopic nanobot factory!
           Nanobots bring it materials to create many replicas."
-          price={fprice}
-          updatePrice={() => setFPrice(data.foundry_price)}
-          updateAmount={updateAmount}
-          updateTime={updateTime}
-        />
-        <DifferentUpgrades
-          img={swarm_img}
-          title="Swarm"
-          description="Fuse nanobots together into a swarm of flying super nanobots capable
+            price={fprice}
+            updatePrice={() => setFPrice(data.foundry_price)}
+            updateAmount={updateAmount}
+            updateTime={updateTime}
+          />
+          <DifferentUpgrades
+            img={swarm_img}
+            title="Swarm"
+            description="Fuse nanobots together into a swarm of flying super nanobots capable
           of finding materials and replicating!"
-          price={sprice}
-          updatePrice={() => setSPrice(data.swarm_price)}
-          updateAmount={updateAmount}
-          updateTime={updateTime}
-        />
+            price={sprice}
+            updatePrice={() => setSPrice(data.swarm_price)}
+            updateAmount={updateAmount}
+            updateTime={updateTime}
+          />
+        </div>
       </div>
       <StatsSection time={time} />
     </>
@@ -105,7 +108,7 @@ const DifferentUpgrades = ({
           handleClick(title, price, updatePrice, updateAmount, updateTime)
         }
       >
-        <p>{price}</p>
+        <p>{formatNumbers(price)}</p>
       </button>
     </div>
   );

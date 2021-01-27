@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
+import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
 import "./clicker.css";
 import img from "../../assets/click-icon-1.png";
@@ -42,10 +43,8 @@ const Count = (props) => {
   return (
     <>
       <div className="amount-container">
-        <h1>
-          {Math.floor(props.amount)}
-          <br /> Nanobots
-        </h1>
+        <h1 className="amount">{formatNumbers(Math.floor(props.amount))}</h1>
+        <h1>Nanobots</h1>
       </div>
     </>
   );

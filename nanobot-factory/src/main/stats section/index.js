@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { data } from "../other/data";
+import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
 import "./stats.css";
 
@@ -55,7 +56,7 @@ const ManualUpgradeStats = ({ level, mvalue }) => {
         Level: <span>{level}</span>
       </p>
       <p>
-        Value: <span>{mvalue}</span>
+        Value: <span>{formatNumbers(mvalue)}</span>
         <sub>/click</sub>
       </p>
     </div>
@@ -70,7 +71,7 @@ const OtherUpgradeStats = ({ title, level, ovalue }) => {
         Level: <span>{level}</span>
       </p>
       <p>
-        Value: <span>{ovalue}</span>
+        Value: <span>{formatNumbers(ovalue)}</span>
         <sub>/sec</sub>
       </p>
     </div>
@@ -81,7 +82,7 @@ const TotalClicks = ({ clicks }) => {
   return (
     <div className="total-clicks-stat">
       <h1>Clicks: </h1>
-      <p>{clicks}</p>
+      <p>{formatNumbers(clicks)}</p>
     </div>
   );
 };
@@ -90,7 +91,7 @@ const NanoPerSec = ({ nanos }) => {
   return (
     <div className="nanopersec-stat">
       <h1>Automated Nanobots Per Second: </h1>
-      <p>{nanos}</p>
+      <p>{formatNumbers(nanos)}</p>
     </div>
   );
 };

@@ -2,9 +2,16 @@
   height: 100vh;
   width: 100%;
   background-color: #bebec0;
-  padding: 0 10px;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+}
+
+.upgrades {
+  height: 90%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -19,7 +26,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: -3px -3px 5px #ffffff70, 3px 3px 10px #00000070;
+  box-shadow: -3px -3px 3px #ffffff70, 3px 3px 8px #00000070;
 }
 
 .u-icon-container {
@@ -60,6 +67,7 @@
 }
 
 .stack p {
+  font-size: 0.95em;
   height: 100px;
   text-align: center;
   padding: 5px;
