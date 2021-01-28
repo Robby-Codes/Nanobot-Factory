@@ -12,11 +12,11 @@ export const data = {
   builder_level: 0,
   //////////////////////////////////////////////////
   foundry_value: 0,
-  foundry_price: 150,
+  foundry_price: 250,
   foundry_level: 0,
   //////////////////////////////////////////////////
   swarm_value: 0,
-  swarm_price: 300,
+  swarm_price: 500,
   swarm_level: 0,
   //////////////////////////////////////////////////
   nanobots_per_second: 0,
