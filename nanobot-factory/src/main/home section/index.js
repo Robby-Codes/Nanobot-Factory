@@ -17,11 +17,18 @@ const HomePage = () => {
 
 const Clicker = () => {
   const [Amount, setAmount] = useState(0);
-  const [rnumber, setRNumber] = useState(null);
+  const [rnumber, setRNumber] = useState();
   const handleClick = () => {
+    let xaxis = (Math.floor(Math.random() * 80) + 10).toString() + "%";
     data.total_clicks += 1;
     data.current_amount = Amount + data.manual_value;
-    setRNumber(<RisingNumbers />);
+    setRNumber(
+      <RisingNumbers
+        xaxis={xaxis}
+        number={data.manual_value}
+        key={generateKey()}
+      />
+    );
     setAmount(data.current_amount);
   };
 
@@ -33,7 +40,11 @@ const Clicker = () => {
         onWheel={(e) => smoothScroll("clicker", e)}
       >
         <Count amount={Amount} />
-        <button onClick={() => handleClick()}>
+        <button
+          onClick={() => {
+            handleClick();
+          }}
+        >
           <img className="click-icon" src={img} />
         </button>
         {rnumber}
@@ -54,16 +65,20 @@ const Count = (props) => {
   );
 };
 
-const RisingNumbers = () => {
-  let xaxis = (Math.floor(Math.random() * 80) + 10).toString() + "%";
+const RisingNumbers = ({ xaxis, number, key }) => {
   const [styling, setStyling] = useState({
-    transition: "all 1s",
-    position: "absolute",
-    bottom: "0",
     right: xaxis,
-    opacity: "1",
+    opacity: "0",
   });
-  return <h1>+1</h1>;
+  return (
+    <h1 key={key} className="rising-numbers" style={styling}>
+      +{number}
+    </h1>
+  );
+};
+
+const generateKey = () => {
+  return Math.floor(Math.random() * 1000);
 };
 
 export default HomePage;
