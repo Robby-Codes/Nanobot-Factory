@@ -83,5 +83,5 @@ h1.rising-numbers {
 }
 
 h1.rising-numbers {
-  animation: risingNumberAnimation 1s 1;
+  animation: risingNumberAnimation 1s 0.5;
 }
