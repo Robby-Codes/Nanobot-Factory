@@ -15,7 +15,6 @@ const HomePage = () => {
   );
 };
 
-let test = 0;
 const Clicker = () => {
   const [Amount, setAmount] = useState(0);
   const [number_1, setNumber_1] = useState();
@@ -31,100 +30,18 @@ const Clicker = () => {
   const handleClick = () => {
     data.total_clicks += 1;
     data.current_amount = Amount + data.manual_value;
-    test += 1;
-    console.log(test);
-    if (test === 1) {
-      setNumber_1(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_2();
-    } else if (test === 2) {
-      setNumber_2(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_3();
-    } else if (test === 3) {
-      setNumber_3(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_4();
-    } else if (test === 4) {
-      setNumber_4(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_5();
-    } else if (test === 5) {
-      setNumber_5(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_6();
-    } else if (test === 6) {
-      setNumber_6(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_7();
-    } else if (test === 7) {
-      setNumber_7(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_8();
-    } else if (test === 8) {
-      setNumber_8(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_9();
-    } else if (test === 9) {
-      setNumber_9(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_10();
-    } else if (test === 10) {
-      setNumber_10(
-        <RisingNumbers
-          xaxis={(Math.floor(Math.random() * 25) + 10).toString() + "%"}
-          number={data.manual_value}
-          key={generateKey()}
-        />
-      );
-      setNumber_1();
-      test = 0;
-    }
+    numberOrder(
+      setNumber_1,
+      setNumber_2,
+      setNumber_3,
+      setNumber_4,
+      setNumber_5,
+      setNumber_6,
+      setNumber_7,
+      setNumber_8,
+      setNumber_9,
+      setNumber_10
+    );
     setAmount(data.current_amount);
   };
 
@@ -182,8 +99,118 @@ const RisingNumbers = ({ xaxis, number, key }) => {
   );
 };
 
-const generateKey = () => {
-  return Math.floor(Math.random() * 1000);
+let rising_count = 0;
+const numberOrder = (
+  setNumber_1,
+  setNumber_2,
+  setNumber_3,
+  setNumber_4,
+  setNumber_5,
+  setNumber_6,
+  setNumber_7,
+  setNumber_8,
+  setNumber_9,
+  setNumber_10
+) => {
+  rising_count += 1;
+  let new_xaxis = 0;
+  if (rising_count % 2 === 0) {
+    new_xaxis = Math.floor(Math.random() * 23) + 73;
+  } else if (rising_count % 2 != 0) {
+    new_xaxis = Math.floor(Math.random() * 23) + 5;
+  }
+  if (rising_count === 1) {
+    setNumber_1(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={1}
+      />
+    );
+    setNumber_2();
+  } else if (rising_count === 2) {
+    setNumber_2(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={2}
+      />
+    );
+    setNumber_3();
+  } else if (rising_count === 3) {
+    setNumber_3(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={3}
+      />
+    );
+    setNumber_4();
+  } else if (rising_count === 4) {
+    setNumber_4(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={4}
+      />
+    );
+    setNumber_5();
+  } else if (rising_count === 5) {
+    setNumber_5(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={5}
+      />
+    );
+    setNumber_6();
+  } else if (rising_count === 6) {
+    setNumber_6(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={6}
+      />
+    );
+    setNumber_7();
+  } else if (rising_count === 7) {
+    setNumber_7(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={7}
+      />
+    );
+    setNumber_8();
+  } else if (rising_count === 8) {
+    setNumber_8(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={8}
+      />
+    );
+    setNumber_9();
+  } else if (rising_count === 9) {
+    setNumber_9(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={9}
+      />
+    );
+    setNumber_10();
+  } else if (rising_count === 10) {
+    setNumber_10(
+      <RisingNumbers
+        xaxis={new_xaxis.toString() + "%"}
+        number={formatNumbers(data.manual_value)}
+        key={10}
+      />
+    );
+    setNumber_1();
+    rising_count = 0;
+  }
 };
 
 export default HomePage;

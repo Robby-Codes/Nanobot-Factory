@@ -121,19 +121,19 @@ const handleClick = (title, price, updatePrice, updateAmount, updateTime) => {
       data.manual_price *= 5;
       data.manual_level += 1;
     } else if (title === "Builder") {
-      data.builder_value += 2;
+      data.builder_value += 10;
       data.builder_price *= 2;
       data.builder_level += 1;
       data.nanobots_per_second =
         data.builder_value + data.foundry_value + data.swarm_value;
     } else if (title === "Foundry") {
-      data.foundry_value += 5;
+      data.foundry_value += 50;
       data.foundry_price *= 3;
       data.foundry_level += 1;
       data.nanobots_per_second =
         data.builder_value + data.foundry_value + data.swarm_value;
     } else if (title === "Swarm") {
-      data.swarm_value += 10;
+      data.swarm_value += 100;
       data.swarm_price *= 4;
       data.swarm_level += 1;
       data.nanobots_per_second =
