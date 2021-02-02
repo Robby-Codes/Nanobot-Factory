@@ -1,6 +1,7 @@
 import React from "react";
 import { data } from "../other/data";
 import "./cover.css";
+import img from "../../assets/click-icon-1.png";
 
 const CoverPage = () => {
   const handleClick = () => {
@@ -13,7 +14,10 @@ const CoverPage = () => {
     <div className="cover">
       <div className="cover-container">
         <div>
-          <h1>Nanobot Factory</h1>
+          <div className="heading-container">
+            <h1>Nanobot Factory</h1>
+            <img src={img} />
+          </div>
           <div className="dec-line"></div>
         </div>
         <p>

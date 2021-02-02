@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import ReactDOM from "react-dom";
 import { data } from "../other/data";
 import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
