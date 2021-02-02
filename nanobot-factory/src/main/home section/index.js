@@ -6,10 +6,12 @@ import { smoothScroll } from "../other/smoothscroll";
 import "./clicker.css";
 import img from "../../assets/click-icon-1.png";
 import UpgradeSection from "../upgrade section";
+import CoverPage from "./cover";
 
 const HomePage = () => {
   return (
     <>
+      <CoverPage />
       <Clicker />
     </>
   );
