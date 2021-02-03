@@ -1,15 +1,18 @@
 .cover {
   height: 100vh;
   width: 100%;
-  padding: 5% 25%;
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 99;
   background-color: #bebec0;
+  overflow: hidden;
 }
 
 .cover-container {
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -595,6 +598,77 @@ span.space {
   animation: animateText 0.03s 4.53s forwards;
 }
 
-/* @media screen and (min-width: 1200px) and (max-width: 2000px) {
+/*Changes to phones screens (portrait)*/
+@media screen and (min-width: 250px) and (max-width: 500px) {
+  .cover-container {
+    height: 90%;
+    width: 95%;
+  }
 
-} */
+  .cover-container h1 {
+    font-size: 2.4em;
+  }
+
+  .cover-container p {
+    font-size: 0.8em;
+    width: 80%;
+  }
+
+  .heading-container img {
+    height: 20px;
+  }
+
+  .cover-container button {
+    font-size: 1.5em;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+/*Changes to phones screens (landscape)*/
+@media screen and (min-width: 501px) and (max-width: 840px) {
+  .cover-container {
+    height: 85%;
+    width: 95%;
+  }
+
+  .cover-container h1 {
+    font-size: 3.5em;
+  }
+
+  .cover-container p {
+    font-size: 0.8em;
+    width: 90%;
+  }
+
+  .heading-container img {
+    height: 20px;
+  }
+
+  .cover-container button {
+    font-size: 1.2em;
+    height: 100px;
+    width: 100px;
+  }
+}
+
+/* Changes for laptops and desktop screens*/
+@media screen and (min-width: 1200px) and (max-width: 2000px) {
+  .cover-container {
+    height: 70%;
+  }
+
+  .cover-container h1 {
+    font-size: 5.5em;
+  }
+
+  .cover-container p {
+    font-size: 1em;
+  }
+
+  .cover-container button {
+    font-size: 1.5em;
+    height: 150px;
+    width: 150px;
+  }
+}

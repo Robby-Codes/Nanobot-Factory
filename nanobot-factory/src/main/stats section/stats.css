@@ -5,6 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .stats-container {
@@ -124,4 +125,135 @@ span {
 .time-stat p {
   font-size: 3em;
   font-weight: bold;
+}
+
+/*Changes to phones screens (portrait)*/
+@media screen and (min-width: 250px) and (max-width: 500px) {
+  .stats-container {
+    height: 95%;
+    width: 95%;
+    padding: 5px;
+  }
+
+  .upgrade-stats {
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .upgrade-stats h1 {
+    font-size: 0.9em;
+  }
+
+  .upgrade-stats p {
+    font-size: 0.8em;
+  }
+
+  .upgrade-stats sub {
+    font-size: 0.5em;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+
+  .total-clicks-stat,
+  .nanopersec-stat {
+    border: 3px solid #bebec0;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .total-clicks-stat h1,
+  .nanopersec-stat h1 {
+    font-size: 0.65em;
+    margin-right: 0;
+    margin-bottom: 3px;
+  }
+
+  .total-clicks-stat p,
+  .nanopersec-stat p {
+    font-size: 0.6em;
+  }
+
+  .time-stat h1 {
+    font-size: 1.5em;
+  }
+
+  .time-stat p {
+    font-size: 1.5em;
+  }
+}
+
+/*Changes to phones screens (landscape)*/
+@media screen and (min-width: 501px) and (max-width: 840px) {
+  .stats-container {
+    height: 95%;
+    width: 95%;
+    padding: 5px;
+  }
+
+  .upgrade-stats {
+    border-radius: 10px;
+    padding: 10px;
+    align-items: center;
+  }
+
+  .upgrade-stats h1 {
+    font-size: 1.5em;
+  }
+
+  .upgrade-stats p {
+    font-size: 0.9em;
+  }
+
+  .upgrade-stats sub {
+    font-size: 0.5em;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+
+  .total-clicks-stat,
+  .nanopersec-stat {
+    border: 3px solid #bebec0;
+    border-radius: 10px;
+  }
+
+  .total-clicks-stat h1,
+  .nanopersec-stat h1 {
+    font-size: 0.8em;
+    margin-right: 0;
+    margin-right: 5px;
+  }
+
+  .total-clicks-stat p,
+  .nanopersec-stat p {
+    font-size: 0.8em;
+  }
+
+  .time-stat h1 {
+    font-size: 1.5em;
+  }
+
+  .time-stat p {
+    font-size: 1.5em;
+  }
+}
+
+/* Changes for laptops and desktop screens*/
+@media screen and (min-width: 1200px) and (max-width: 2000px) {
+  .upgrade-stats h1 {
+    font-size: 2.5em;
+  }
+
+  .upgrade-stats p span {
+    font-size: 0.9em;
+  }
+
+  .upgrade-stats sub {
+    font-size: 0.6em;
+  }
 }

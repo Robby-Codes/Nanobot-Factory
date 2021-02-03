@@ -19,6 +19,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .clicker-container h1 {
@@ -95,4 +96,49 @@ h1.rising-numbers {
 
 h1.rising-numbers {
   animation: risingNumberAnimation 1s 1;
+}
+
+/*Changes to phones screens (portrait)*/
+@media screen and (min-width: 250px) and (max-width: 500px) {
+  .amount-container h1 {
+    font-size: 1em;
+  }
+
+  .amount-container .amount {
+    font-size: 2em;
+  }
+
+  .clicker-container button {
+    height: 14em;
+    width: 14em;
+  }
+
+  h1.rising-numbers {
+    font-size: 1.5em;
+  }
+}
+
+/*Changes to phones screens (landscape)*/
+@media screen and (min-width: 501px) and (max-width: 840px) {
+  .amount-container h1 {
+    font-size: 1em;
+  }
+
+  .amount-container .amount {
+    font-size: 2em;
+  }
+
+  .clicker-container button {
+    height: 14em;
+    width: 14em;
+  }
+
+  h1.rising-numbers {
+    font-size: 1.5em;
+  }
+}
+
+/* Changes for laptops and desktop screens*/
+@media screen and (min-width: 1200px) and (max-width: 2000px) {
+  /*No changes needed thus far*/
 }
