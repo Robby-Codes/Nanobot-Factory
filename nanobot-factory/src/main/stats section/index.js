@@ -55,8 +55,11 @@ const ManualUpgradeStats = ({ level, mvalue }) => {
         Level: <span>{level}</span>
       </p>
       <p>
-        Value: <span>{formatNumbers(mvalue)}</span>
-        <sub>/click</sub>
+        Value:{" "}
+        <span>
+          {formatNumbers(mvalue)}
+          <sub>/click</sub>
+        </span>
       </p>
     </div>
   );
@@ -70,8 +73,11 @@ const OtherUpgradeStats = ({ title, level, ovalue }) => {
         Level: <span>{level}</span>
       </p>
       <p>
-        Value: <span>{formatNumbers(ovalue)}</span>
-        <sub>/sec</sub>
+        Value:{" "}
+        <span>
+          {formatNumbers(ovalue)}
+          <sub>/sec</sub>
+        </span>
       </p>
     </div>
   );

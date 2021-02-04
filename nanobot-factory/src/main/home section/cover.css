@@ -601,32 +601,38 @@ span.space {
 /*Changes to phones screens (portrait)*/
 @media screen and (min-width: 250px) and (max-width: 500px) {
   .cover-container {
-    height: 90%;
+    height: 85%;
     width: 95%;
+    border-width: 3px;
   }
 
   .cover-container h1 {
-    font-size: 2.4em;
+    font-size: 1.6em;
   }
 
   .cover-container p {
-    font-size: 0.8em;
-    width: 80%;
+    font-size: 0.9em;
+    width: 95%;
   }
 
   .heading-container img {
-    height: 20px;
+    height: 15px;
   }
 
   .cover-container button {
-    font-size: 1.5em;
-    height: 150px;
-    width: 150px;
+    font-size: 1em;
+    height: 80px;
+    width: 80px;
+    margin-bottom: 10px;
+  }
+
+  small {
+    font-size: 0.7em;
   }
 }
 
 /*Changes to phones screens (landscape)*/
-@media screen and (min-width: 501px) and (max-width: 840px) {
+@media screen and (min-width: 501px) and (max-width: 764px) {
   .cover-container {
     height: 85%;
     width: 95%;
@@ -637,7 +643,7 @@ span.space {
   }
 
   .cover-container p {
-    font-size: 0.8em;
+    font-size: 1.2em;
     width: 90%;
   }
 
@@ -647,15 +653,46 @@ span.space {
 
   .cover-container button {
     font-size: 1.2em;
-    height: 100px;
-    width: 100px;
+    height: 90px;
+    width: 90px;
+    margin-bottom: 10px;
+  }
+
+  small {
+    font-size: 0.7em;
+  }
+}
+
+/* Changes for intermediate screen sizes*/
+@media screen and (min-width: 765px) and (max-width: 1199px) {
+  .cover-container {
+    width: 80%;
+  }
+
+  .cover-container h1 {
+    font-size: 5em;
+  }
+
+  .cover-container p {
+    font-size: 1.2em;
+    width: 90%;
+  }
+
+  .heading-container img {
+    height: 40px;
+  }
+
+  .cover-container button {
+    font-size: 1.3em;
+    height: 150px;
+    width: 150px;
   }
 }
 
 /* Changes for laptops and desktop screens*/
 @media screen and (min-width: 1200px) and (max-width: 2000px) {
   .cover-container {
-    height: 70%;
+    height: 80%;
   }
 
   .cover-container h1 {
@@ -663,7 +700,8 @@ span.space {
   }
 
   .cover-container p {
-    font-size: 1em;
+    font-size: 1.3em;
+    width: 80%;
   }
 
   .cover-container button {

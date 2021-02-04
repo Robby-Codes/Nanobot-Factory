@@ -143,18 +143,23 @@ span {
 
   .upgrade-stats h1 {
     font-size: 0.9em;
+    margin-bottom: 5px;
   }
 
   .upgrade-stats p {
+    width: 100%;
+    font-size: 0.8em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  span {
     font-size: 0.8em;
   }
 
   .upgrade-stats sub {
     font-size: 0.5em;
-  }
-
-  span {
-    font-size: 0.8em;
   }
 
   .total-clicks-stat,
@@ -167,14 +172,14 @@ span {
 
   .total-clicks-stat h1,
   .nanopersec-stat h1 {
-    font-size: 0.65em;
+    font-size: 0.7em;
     margin-right: 0;
     margin-bottom: 3px;
   }
 
   .total-clicks-stat p,
   .nanopersec-stat p {
-    font-size: 0.6em;
+    font-size: 0.8em;
   }
 
   .time-stat h1 {
@@ -187,7 +192,7 @@ span {
 }
 
 /*Changes to phones screens (landscape)*/
-@media screen and (min-width: 501px) and (max-width: 840px) {
+@media screen and (min-width: 501px) and (max-width: 764px) {
   .stats-container {
     height: 95%;
     width: 95%;
@@ -197,7 +202,7 @@ span {
   .upgrade-stats {
     border-radius: 10px;
     padding: 10px;
-    align-items: center;
+    align-items: flex-start;
   }
 
   .upgrade-stats h1 {
@@ -213,7 +218,7 @@ span {
   }
 
   span {
-    font-size: 0.8em;
+    font-size: 0.9em;
   }
 
   .total-clicks-stat,
@@ -243,17 +248,80 @@ span {
   }
 }
 
-/* Changes for laptops and desktop screens*/
-@media screen and (min-width: 1200px) and (max-width: 2000px) {
-  .upgrade-stats h1 {
-    font-size: 2.5em;
+/* Changes for intermediate screen sizes*/
+@media screen and (min-width: 765px) and (max-width: 1199px) {
+  .stats-container {
+    width: 80%;
   }
 
-  .upgrade-stats p span {
-    font-size: 0.9em;
+  .upgrade-stats {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .upgrade-stats h1 {
+    font-size: 2.2em;
+  }
+
+  .upgrade-stats p {
+    font-size: 1em;
   }
 
   .upgrade-stats sub {
     font-size: 0.6em;
+  }
+
+  span {
+    font-size: 1em;
+  }
+
+  .total-clicks-stat,
+  .nanopersec-stat {
+    border: 3px solid #bebec0;
+    border-radius: 10px;
+  }
+
+  .total-clicks-stat h1,
+  .nanopersec-stat h1 {
+    font-size: 1.2em;
+    margin-right: 0;
+    margin-right: 10px;
+  }
+
+  .total-clicks-stat p,
+  .nanopersec-stat p {
+    font-size: 1.2em;
+  }
+
+  .time-stat h1 {
+    font-size: 3em;
+  }
+
+  .time-stat p {
+    font-size: 3em;
+  }
+}
+
+/* Changes for laptops and desktop screens*/
+@media screen and (min-width: 1200px) and (max-width: 2000px) {
+  .upgrade-stats {
+    padding: 10px;
+    align-items: flex-start;
+  }
+
+  .upgrade-stats h1 {
+    font-size: 2.6em;
+  }
+
+  .upgrade-stats p {
+    font-size: 1.2em;
+  }
+
+  .upgrade-stats sub {
+    font-size: 0.6em;
+  }
+
+  span {
+    font-size: 1.2em;
   }
 }
