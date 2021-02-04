@@ -1,3 +1,5 @@
+// Data used by multiple js files to keep track of progress,
+// prices, current amount of nanobots, etc.
 export const data = {
   total_clicks: 0,
   //////////////////////////////////////////////////

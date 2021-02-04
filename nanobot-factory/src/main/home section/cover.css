@@ -138,6 +138,7 @@ span.space {
   }
 }
 
+/*Animating individual letters in Cover Page*/
 .cover-container p span:nth-of-type(1) {
   animation: animateText 0.03s 0s forwards;
 }

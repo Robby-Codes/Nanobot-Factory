@@ -9,8 +9,10 @@ import factory_img from "../../assets/factory.png";
 import swarm_img from "../../assets/swarm.png";
 import StatsSection from "../stats section";
 
+// Upgrade Section Component.
 const UpgradeSection = ({ updateAmount }) => {
   const [time, setTime] = useState("00:00:00");
+  // Calls amountCounter, which should continue running forever
   useEffect(() => {
     amountCounter(updateAmount, setTime);
   }, []);
@@ -23,6 +25,7 @@ const UpgradeSection = ({ updateAmount }) => {
   );
 };
 
+// The different upgrades
 const Upgrade = ({ updateAmount, time, updateTime }) => {
   const [mprice, setMPrice] = useState(data.manual_price);
   const [bprice, setBPrice] = useState(data.builder_price);
@@ -40,6 +43,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
         <div className="upgrades">
           <DifferentUpgrades
             img={click_img}
+            img_alt="Manual Upgrade"
             title="Manual"
             description="Sacrifice nanobots for research! Figure out how to manually build more
           at a time."
@@ -50,6 +54,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
           />
           <DifferentUpgrades
             img={super_img}
+            img_alt="Super Nanobot Upgrade"
             title="Builder"
             description="Combine nanobots to create a super nanobot capable of creating other
           nanobots using materials around it!"
@@ -60,6 +65,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
           />
           <DifferentUpgrades
             img={factory_img}
+            img_alt="Nanobot Foundry Upgrade"
             title="Foundry"
             description="Morph nanobots together to create a microscopic nanobot factory!
           Nanobots bring it materials to create many replicas."
@@ -70,6 +76,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
           />
           <DifferentUpgrades
             img={swarm_img}
+            img_alt="Nanobot Swarm Upgrade"
             title="Swarm"
             description="Fuse nanobots together into a swarm of flying super nanobots capable
           of finding materials and replicating!"
@@ -85,8 +92,10 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
   );
 };
 
+// Used to create the different upgrades in Upgrade component
 const DifferentUpgrades = ({
   img,
+  img_alt,
   title,
   description,
   price,
@@ -97,7 +106,7 @@ const DifferentUpgrades = ({
   return (
     <div className="stack">
       <div className="u-icon-container">
-        <img className="upgrade-icon" src={img} />
+        <img className="upgrade-icon" src={img} alt={img_alt} />
       </div>
       <div className="dec-line"></div>
       <h1>{title}</h1>
@@ -113,6 +122,7 @@ const DifferentUpgrades = ({
   );
 };
 
+// Checks for current amount and price to decide whether to upgrade or not
 const handleClick = (title, price, updatePrice, updateAmount, updateTime) => {
   if (data.current_amount >= price) {
     if (title === "Manual") {
@@ -144,6 +154,7 @@ const handleClick = (title, price, updatePrice, updateAmount, updateTime) => {
   }
 };
 
+// Formats the time in HH:MM:SS
 const formatTime = () => {
   data.seconds += 0.1;
   if (data.seconds >= 60) {
@@ -169,6 +180,7 @@ const formatTime = () => {
   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
 };
 
+// Runs indefinitely. Updates the displayed amount on the Home Section and the time in the Stats Section
 const amountCounter = (updateAmount, updateTime) => {
   const builder = data.builder_value;
   const factory = data.foundry_value;

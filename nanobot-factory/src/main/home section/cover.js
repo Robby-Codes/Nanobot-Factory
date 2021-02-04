@@ -1,22 +1,23 @@
 import React from "react";
-import { data } from "../other/data";
 import "./cover.css";
 import img from "../../assets/click-icon-1.png";
 
 const CoverPage = () => {
+  // Will remove the coverpage using an animation.
   const handleClick = () => {
     let page = document.getElementsByClassName("cover")[0];
     page.style.transition = "all 2s";
     page.style.transform = "translate(-100%, 0)";
     page.style.opacity = "0";
   };
+  // Using span tag to animate individual letters in p tag.
   return (
     <div className="cover">
       <div className="cover-container">
         <div>
           <div className="heading-container">
             <h1>Nanobot Factory</h1>
-            <img src={img} />
+            <img src={img} alt="A nanobot" />
           </div>
           <div className="dec-line"></div>
         </div>

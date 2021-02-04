@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { data } from "../other/data";
 import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
 import "./stats.css";
 
+// Stats Section Component.
 const StatsSection = ({ time }) => {
   return (
     <>
@@ -47,6 +48,7 @@ const StatsSection = ({ time }) => {
   );
 };
 
+// Displays user stats for manual click level and value; also number of clicks.
 const ManualUpgradeStats = ({ level, mvalue }) => {
   return (
     <div className="upgrade-stats">
@@ -65,6 +67,7 @@ const ManualUpgradeStats = ({ level, mvalue }) => {
   );
 };
 
+// Used to create other upgrade stats.
 const OtherUpgradeStats = ({ title, level, ovalue }) => {
   return (
     <div className="upgrade-stats">
@@ -83,6 +86,7 @@ const OtherUpgradeStats = ({ title, level, ovalue }) => {
   );
 };
 
+// Displays the total number of clicks on the Home Section button.
 const TotalClicks = ({ clicks }) => {
   return (
     <div className="total-clicks-stat">
@@ -92,6 +96,7 @@ const TotalClicks = ({ clicks }) => {
   );
 };
 
+// Displays the total number of automated nanobots being made per second.
 const NanoPerSec = ({ nanos }) => {
   return (
     <div className="nanopersec-stat">
@@ -101,6 +106,7 @@ const NanoPerSec = ({ nanos }) => {
   );
 };
 
+// Displays the total amount of time since the user visited the page.
 const TimePlayed = ({ clock }) => {
   return (
     <div className="time-stat">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { data } from "../other/data";
 import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
@@ -7,6 +7,7 @@ import img from "../../assets/click-icon-1.png";
 import UpgradeSection from "../upgrade section";
 import CoverPage from "./cover";
 
+// Home Section Component
 const HomePage = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const HomePage = () => {
   );
 };
 
+// Displays click counter with amount and "clicker" button
 const Clicker = () => {
   const [Amount, setAmount] = useState(0);
   const [number_1, setNumber_1] = useState();
@@ -28,6 +30,7 @@ const Clicker = () => {
   const [number_8, setNumber_8] = useState();
   const [number_9, setNumber_9] = useState();
   const [number_10, setNumber_10] = useState();
+  // Rerenders numbers to be animated on click
   const handleClick = () => {
     data.total_clicks += 1;
     data.current_amount = Amount + data.manual_value;
@@ -45,7 +48,6 @@ const Clicker = () => {
     );
     setAmount(data.current_amount);
   };
-
   return (
     <>
       <div
@@ -59,7 +61,7 @@ const Clicker = () => {
             handleClick();
           }}
         >
-          <img className="click-icon" src={img} />
+          <img className="click-icon" src={img} alt="A nanobot" />
         </button>
         {number_1}
         {number_2}
@@ -77,6 +79,7 @@ const Clicker = () => {
   );
 };
 
+// Displays number of nanobots
 const Count = (props) => {
   return (
     <>
@@ -88,11 +91,12 @@ const Count = (props) => {
   );
 };
 
+// Number component to be animated and displayed on click
 const RisingNumbers = ({ xaxis, number, key }) => {
-  const [styling, setStyling] = useState({
+  const styling = {
     right: xaxis,
     opacity: "0",
-  });
+  };
   return (
     <h1 key={key} className="rising-numbers" style={styling}>
       +{number}
@@ -100,6 +104,7 @@ const RisingNumbers = ({ xaxis, number, key }) => {
   );
 };
 
+// Called on click to render a RisingNumbers component
 let rising_count = 0;
 const numberOrder = (
   setNumber_1,
@@ -115,9 +120,11 @@ const numberOrder = (
 ) => {
   rising_count += 1;
   let new_xaxis = 0;
+  // Decides whether to render RisingNumbers component on the left
+  // or right of the page.
   if (rising_count % 2 === 0) {
     new_xaxis = Math.floor(Math.random() * 23) + 73;
-  } else if (rising_count % 2 != 0) {
+  } else if (rising_count % 2 !== 0) {
     new_xaxis = Math.floor(Math.random() * 23) + 5;
   }
   if (rising_count === 1) {
