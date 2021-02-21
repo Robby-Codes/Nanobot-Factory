@@ -1,6 +1,6 @@
 import React from "react";
+import { images } from "../other/images";
 import "./cover.css";
-import img from "../../assets/click-icon-1.png";
 
 const CoverPage = () => {
   // Will remove the coverpage using an animation.
@@ -17,7 +17,7 @@ const CoverPage = () => {
         <div>
           <div className="heading-container">
             <h1>Nanobot Factory</h1>
-            <img src={img} alt="A nanobot" />
+            <img src={images.click_icon} alt="A nanobot" />
           </div>
           <div className="dec-line"></div>
         </div>

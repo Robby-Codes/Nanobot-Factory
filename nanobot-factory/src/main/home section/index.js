@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { data } from "../other/data";
 import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
+import { images } from "../other/images";
 import "./clicker.css";
-import img from "../../assets/click-icon-1.png";
 import UpgradeSection from "../upgrade section";
 import CoverPage from "./cover";
 
@@ -61,7 +61,7 @@ const Clicker = () => {
             handleClick();
           }}
         >
-          <img className="click-icon" src={img} alt="A nanobot" />
+          <img className="click-icon" src={images.click_icon} alt="A nanobot" />
         </button>
         {number_1}
         {number_2}

@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 import { data } from "../other/data";
 import { formatNumbers } from "../other/formatnumbers";
 import { smoothScroll } from "../other/smoothscroll";
+import { images } from "../other/images";
 import "./upgrade.css";
-import super_img from "../../assets/supernano.png";
-import click_img from "../../assets/click.png";
-import factory_img from "../../assets/factory.png";
-import swarm_img from "../../assets/swarm.png";
 import StatsSection from "../stats section";
 
 // Upgrade Section Component.
@@ -42,7 +39,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
       >
         <div className="upgrades">
           <DifferentUpgrades
-            img={click_img}
+            img={images.click_img}
             img_alt="Manual Upgrade"
             title="Manual"
             description="Sacrifice nanobots for research! Figure out how to manually build more
@@ -53,7 +50,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
             updateTime={updateTime}
           />
           <DifferentUpgrades
-            img={super_img}
+            img={images.super_img}
             img_alt="Super Nanobot Upgrade"
             title="Builder"
             description="Combine nanobots to create a super nanobot capable of creating other
@@ -64,7 +61,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
             updateTime={updateTime}
           />
           <DifferentUpgrades
-            img={factory_img}
+            img={images.factory_img}
             img_alt="Nanobot Foundry Upgrade"
             title="Foundry"
             description="Morph nanobots together to create a microscopic nanobot factory!
@@ -75,7 +72,7 @@ const Upgrade = ({ updateAmount, time, updateTime }) => {
             updateTime={updateTime}
           />
           <DifferentUpgrades
-            img={swarm_img}
+            img={images.swarm_img}
             img_alt="Nanobot Swarm Upgrade"
             title="Swarm"
             description="Fuse nanobots together into a swarm of flying super nanobots capable
