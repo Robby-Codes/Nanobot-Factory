@@ -608,11 +608,11 @@ span.space {
   }
 
   .cover-container h1 {
-    font-size: 1.6em;
+    font-size: 3em;
   }
 
   .cover-container p {
-    font-size: 0.9em;
+    font-size: 1.2em;
     width: 95%;
   }
 
@@ -621,9 +621,9 @@ span.space {
   }
 
   .cover-container button {
-    font-size: 1em;
-    height: 80px;
-    width: 80px;
+    font-size: 1.5em;
+    height: 150px;
+    width: 150px;
     margin-bottom: 10px;
   }
 

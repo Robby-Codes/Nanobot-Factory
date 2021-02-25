@@ -11,6 +11,21 @@ body {
   overflow: hidden;
 }
 
+::-webkit-scrollbar {
+  width: 8px;
+  padding: 2.5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #bebec0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #851523;
+  border-radius: 6px;
+  border: #bebec0 1px solid;
+}
+
 .clicker-container {
   height: 100vh;
   width: 100%;
@@ -101,16 +116,16 @@ h1.rising-numbers {
 /*Changes to phones screens (portrait)*/
 @media screen and (min-width: 250px) and (max-width: 500px) {
   .amount-container h1 {
-    font-size: 1em;
-  }
-
-  .amount-container .amount {
     font-size: 2em;
   }
 
+  .amount-container .amount {
+    font-size: 4em;
+  }
+
   .clicker-container button {
-    height: 14em;
-    width: 14em;
+    height: 25em;
+    width: 25em;
   }
 
   h1.rising-numbers {
