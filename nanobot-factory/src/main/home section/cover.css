@@ -633,10 +633,10 @@ span.space {
 }
 
 /*Changes to phones screens (landscape)*/
-@media screen and (min-width: 501px) and (max-width: 764px) {
+@media screen and (min-width: 501px) and (max-width: 916px) {
   .cover-container {
     height: 85%;
-    width: 95%;
+    width: 60%;
   }
 
   .cover-container h1 {
@@ -645,7 +645,7 @@ span.space {
 
   .cover-container p {
     font-size: 1.2em;
-    width: 90%;
+    width: 95%;
   }
 
   .heading-container img {
@@ -665,7 +665,7 @@ span.space {
 }
 
 /* Changes for intermediate screen sizes*/
-@media screen and (min-width: 765px) and (max-width: 1199px) {
+@media screen and (min-width: 917px) and (max-width: 1199px) {
   .cover-container {
     width: 80%;
   }

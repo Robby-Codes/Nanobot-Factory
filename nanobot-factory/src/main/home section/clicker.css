@@ -134,18 +134,23 @@ h1.rising-numbers {
 }
 
 /*Changes to phones screens (landscape)*/
-@media screen and (min-width: 501px) and (max-width: 764px) {
+@media screen and (min-width: 501px) and (max-width: 916px) {
   .amount-container h1 {
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
   .amount-container .amount {
-    font-size: 2em;
+    font-size: 2.5em;
   }
 
   .clicker-container button {
-    height: 14em;
-    width: 14em;
+    height: 16em;
+    width: 80%;
+    border-radius: 10px;
+  }
+
+  .clicker-container button img {
+    width: auto;
   }
 
   h1.rising-numbers {
@@ -154,7 +159,7 @@ h1.rising-numbers {
 }
 
 /* Changes for intermediate screen sizes*/
-@media screen and (min-width: 765px) and (max-width: 1199px) {
+@media screen and (min-width: 917px) and (max-width: 1199px) {
   /*No changes needed thus far*/
 }
 
