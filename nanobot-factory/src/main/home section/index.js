@@ -17,6 +17,21 @@ const HomePage = () => {
   );
 };
 
+// Deciding whether or not to use custom smooth scroll function
+// depending on the size of the device screen.
+const checkWindowHeight = () => {
+  var windowHeight = window.outerHeight;
+  var windowWidth = window.innerWidth;
+  if (windowHeight < 916 && windowWidth < 916) {
+    document.getElementsByTagName("BODY")[0].style.overflowY = "scroll";
+  } else {
+    document.getElementsByTagName("BODY")[0].style.overflowY = "hidden";
+  }
+};
+
+checkWindowHeight();
+window.addEventListener("resize", () => checkWindowHeight());
+
 // Displays click counter with amount and "clicker" button
 const Clicker = () => {
   const [Amount, setAmount] = useState(0);
