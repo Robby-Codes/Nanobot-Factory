@@ -142,6 +142,17 @@ h1.rising-numbers {
 
 /*Changes to phones screens (landscape)*/
 @media screen and (min-width: 501px) and (max-width: 916px) {
+  .clicker-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .amount-container {
+    margin-top: 0;
+  }
+
   .amount-container h1 {
     font-size: 1.5em;
   }
@@ -151,7 +162,7 @@ h1.rising-numbers {
   }
 
   .clicker-container button {
-    height: 16em;
+    height: 50%;
     width: 80%;
     border-radius: 10px;
   }
