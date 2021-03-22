@@ -10,7 +10,9 @@ const CoverPage = () => {
     page.style.transform = "translate(-100%, 0)";
     page.style.opacity = "0";
   };
-  // Using span tag to animate individual letters in p tag.
+  // String message for cover page, to later be animated
+  let message =
+    "Create as many nanobots as possible! Make sure to purchase upgrades along the way to speed up your progress. You can also check out you stats.";
   return (
     <div className="cover">
       <div className="cover-container">
@@ -21,163 +23,20 @@ const CoverPage = () => {
           </div>
           <div className="dec-line"></div>
         </div>
+        {/* String turned to array and mapped onto seperate span tags to animate the individual characters*/}
         <p className="description">
-          <span>C</span>
-          <span>r</span>
-          <span>e</span>
-          <span>a</span>
-          <span>t</span>
-          <span>e</span>
-          <span className="space"> </span>
-          <span>a</span>
-          <span>s</span>
-          <span className="space"> </span>
-          <span>m</span>
-          <span>a</span>
-          <span>n</span>
-          <span>y</span>
-          <span className="space"> </span>
-          <span>n</span>
-          <span>a</span>
-          <span>n</span>
-          <span>o</span>
-          <span>b</span>
-          <span>o</span>
-          <span>t</span>
-          <span>s</span>
-          <span className="space"> </span>
-          <span>a</span>
-          <span>s</span>
-          <span className="space"> </span>
-          <span>p</span>
-          <span>o</span>
-          <span>s</span>
-          <span>s</span>
-          <span>i</span>
-          <span>b</span>
-          <span>l</span>
-          <span>e</span>
-          <span>!</span>
-          <br></br>
-          <span>M</span>
-          <span>a</span>
-          <span>k</span>
-          <span>e</span>
-          <span className="space"> </span>
-          <span>s</span>
-          <span>u</span>
-          <span>r</span>
-          <span>e</span>
-          <span className="space"> </span>
-          <span>t</span>
-          <span>o</span>
-          <span className="space"> </span>
-          <span>p</span>
-          <span>u</span>
-          <span>r</span>
-          <span>c</span>
-          <span>h</span>
-          <span>a</span>
-          <span>s</span>
-          <span>e</span>
-          <span className="space"> </span>
-          <span>u</span>
-          <span>p</span>
-          <span>g</span>
-          <span>r</span>
-          <span>a</span>
-          <span>d</span>
-          <span>e</span>
-          <span>s</span>
-          <span className="space"> </span>
-          <span>a</span>
-          <span>l</span>
-          <span>o</span>
-          <span>n</span>
-          <span>g</span>
-          <span className="space"> </span>
-          <span>t</span>
-          <span>h</span>
-          <span>e</span>
-          <span className="space"> </span>
-          <span>w</span>
-          <span>a</span>
-          <span>y</span>
-          <br></br>
-          <span>t</span>
-          <span>o</span>
-          <span className="space"> </span>
-          <span>s</span>
-          <span>p</span>
-          <span>e</span>
-          <span>e</span>
-          <span>d</span>
-          <span className="space"> </span>
-          <span>u</span>
-          <span>p</span>
-          <span className="space"> </span>
-          <span>y</span>
-          <span>o</span>
-          <span>u</span>
-          <span>r</span>
-          <span className="space"> </span>
-          <span>p</span>
-          <span>r</span>
-          <span>o</span>
-          <span>g</span>
-          <span>r</span>
-          <span>e</span>
-          <span>s</span>
-          <span>s</span>
-          <span>.</span>
-          <span className="space"> </span>
-          <span>Y</span>
-          <span>o</span>
-          <span>u</span>
-          <span className="space"> </span>
-          <span>c</span>
-          <span>a</span>
-          <span>n</span>
-          <span className="space"> </span>
-          <span>a</span>
-          <span>l</span>
-          <span>s</span>
-          <span>o</span>
-          <span className="space"> </span>
-          <span>c</span>
-          <span>h</span>
-          <span>e</span>
-          <span>c</span>
-          <span>k</span>
-          <span className="space"> </span>
-          <span>o</span>
-          <span>u</span>
-          <span>t</span>
-          <br></br>
-          <span>y</span>
-          <span>o</span>
-          <span>u</span>
-          <span>r</span>
-          <span className="space"> </span>
-          <span>s</span>
-          <span>t</span>
-          <span>a</span>
-          <span>t</span>
-          <span>s</span>
-          <span className="space"> </span>
-          <span>a</span>
-          <span>t</span>
-          <span className="space"> </span>
-          <span>a</span>
-          <span>n</span>
-          <span>y</span>
-          <span className="space"> </span>
-          <span>p</span>
-          <span>o</span>
-          <span>i</span>
-          <span>n</span>
-          <span>t</span>
-          <span>.</span>
+          {message.split("").map((char, ind) => {
+            let new_animation = charStyle();
+            return char !== " " ? (
+              <span style={new_animation} key={ind}>
+                {char}
+              </span>
+            ) : (
+              <span className="space" style={new_animation} key={ind}>
+                {char}
+              </span>
+            );
+          })}
         </p>
         <button onClick={() => handleClick()}>LETS GO!</button>
       </div>
@@ -185,5 +44,15 @@ const CoverPage = () => {
     </div>
   );
 };
+
+// Animation for the cover text
+let textDelay = 0;
+function charStyle() {
+  const textAnimation = {
+    animation: `animateText 0.03s ${textDelay.toFixed(2)}s forwards`,
+  };
+  textDelay += 0.03;
+  return textAnimation;
+}
 
 export default CoverPage;
