@@ -43,7 +43,6 @@ const Clicker = () => {
     numberOrder(numbers, setNumbers);
     setAmount(data.current_amount);
   };
-  console.log(numbers);
   return (
     <>
       <div
